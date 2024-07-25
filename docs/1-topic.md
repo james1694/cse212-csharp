@@ -1,0 +1,38 @@
+A queue is a data structure that follows the First-In-First-Out (FIFO) principle. 
+The first element added to the queue is the first one to be removed.
+Queues are used in various scenarios like scheduling processes, managing tasks in order, or handling requests in web servers.
+
+Key Operations
+Enqueue: Adds an element to the end of the queue.
+Dequeue: Removes and returns the element from the front of the queue.
+Peek: Returns the element at the front of the queue without removing it.
+IsEmpty: Checks if the queue is empty.
+Count: Returns the number of elements in the queue.
+Implementation
+In C#, you can use the Queue<T> class from the System.Collections.Generic namespace.
+Below is a simple implementation and usage of a queue in C#.
+
+
+class Program
+{
+    static void Main()
+    {
+        Queue<int> queue = new Queue<int>();
+        queue.Enqueue(1);
+        queue.Enqueue(2);
+        queue.Enqueue(3);
+        Console.WriteLine("Front element: " + queue.Peek());
+        Console.WriteLine("Dequeued: " + queue.Dequeue());
+        Console.WriteLine("Dequeued: " + queue.Dequeue())
+        Console.WriteLine("Is queue empty? " + (queue.Count == 0));
+
+        queue.Enqueue(4);
+
+        Console.WriteLine("Number of elements in queue: " + queue.Count);
+        while (queue.Count > 0)
+        {
+            Console.WriteLine("Dequeued: " + queue.Dequeue());
+        }
+        Console.WriteLine("Is queue empty? " + (queue.Count == 0));
+    }
+}
